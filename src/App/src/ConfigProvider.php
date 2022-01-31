@@ -35,6 +35,11 @@ class ConfigProvider
             ],
             'factories'  => [
                 Handler\HomePageHandler::class => Handler\HomePageHandlerFactory::class,
+                Handler\CadastroAcessoHandler::class => Handler\CadastroAcessoHandlerFactory::class,
+                Handler\ExcluiAcessoHandler::class => Handler\ExcluiAcessoHandlerFactory::class,
+                Handler\AtualizaAcessoHandler::class => Handler\AtualizaAcessoHandlerFactory::class,
+                Handler\VisualizaAcessoHandler::class => Handler\VisualizaAcessoHandlerFactory::class,
+                Handler\ListaAcessoHandler::class => Handler\ListaAcessoHandlerFactory::class,
             ],
         ];
     }

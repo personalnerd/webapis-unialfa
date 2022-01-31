@@ -20,6 +20,7 @@ return [
         ],
         // Use 'factories' for services provided by callbacks/factory classes.
         'factories' => [
+            'DbAdapter' => Laminas\Db\Adapter\AdapterServiceFactory::class,
             // Fully\Qualified\ClassName::class => Fully\Qualified\FactoryName::class,
         ],
     ],

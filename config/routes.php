@@ -40,4 +40,9 @@ use Psr\Container\ContainerInterface;
 return static function (Application $app, MiddlewareFactory $factory, ContainerInterface $container): void {
     $app->get('/', App\Handler\HomePageHandler::class, 'home');
     $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
+    $app->post('/acesso/cadastrar', App\Handler\CadastroAcessoHandler::class, 'acesso.cadastrar');
+    $app->post('/acesso/excluir/:id', App\Handler\ExcluiAcessoHandler::class, 'acesso.excluir');
+    $app->post('/acesso/atualizar/:id', App\Handler\AtualizaAcessoHandler::class, 'acesso.atualizar');
+    $app->get('/acesso/visualizar/:id', App\Handler\VisualizaAcessoHandler::class, 'acesso.visualizar');
+    $app->get('/acesso/listar', App\Handler\ListaAcessoHandler::class, 'acesso.listar');
 };
