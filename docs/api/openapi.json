@@ -1,0 +1,60 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "WebAPIs UniAlfa",
+        "description": "API usada em sala de aula",
+        "version": "1.0.0",
+        "license": {
+            "name": "Free!",
+            "url": ""
+        },
+        "contact": {
+            "name": "Er Galvão Abbott",
+            "email": "galvao@galvao.eti.br",
+            "url": "https://galvao.eti.br"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:{port}/v{version}",
+            "description": "Dev",
+            "variables": {
+                "port": {
+                    "default": "8088"
+                },
+                "version": {
+                    "default": "1"
+                }
+            }
+        }
+    ],
+    "tags": [
+        {"name": "acesso"}
+    ],
+    "paths": {
+        "/v1/acesso": {
+            "get": {
+                "tags": ["acesso"],
+                "operationId": "get-acesso",
+                "description": "Lista os registros ou um registro apenas em caso da presença do cabeçalho x-id",
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "x-id",
+                        "in": "header",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista os registros ou um registro apenas em caso da presença do cabeçalho x-id"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+    }
+}
