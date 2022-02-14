@@ -11,13 +11,13 @@ use Psr\Http\Server\RequestHandlerInterface;
 use function assert;
 use function get_class;
 
-class AtualizaAcessoHandlerFactory
+class AcessoHandlerFactory
 {
     public function __invoke(ContainerInterface $container): RequestHandlerInterface
     {
         $router = $container->get(RouterInterface::class);
         assert($router instanceof RouterInterface);
 
-        return new AtualizaAcessoHandler(get_class($container), $router, $container->get('DbAdapter'));
+        return new AcessoHandler(get_class($container), $router, $container->get('DbAdapter'));
     }
 }
