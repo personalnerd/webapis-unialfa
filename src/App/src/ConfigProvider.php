@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Handler\CategoriaHandler;
+use App\Handler\CategoriaHandlerFactory;
+use App\Handler\ProdutoHandler;
+use App\Handler\ProdutoHandlerFactory;
+
 /**
  * The configuration provider for the App module
  *
@@ -31,10 +36,11 @@ class ConfigProvider
     public function getDependencies(): array
     {
         return [
-            'invokables' => [
-            ],
+            'invokables' => [],
             'factories'  => [
                 Handler\AcessoHandler::class => Handler\AcessoHandlerFactory::class,
+                Handler\CategoriaHandler::class => Handler\CategoriaHandlerFactory::class,
+                Handler\ProdutoHandler::class => Handler\ProdutoHandlerFactory::class
             ],
         ];
     }

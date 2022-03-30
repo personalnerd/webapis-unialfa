@@ -39,4 +39,6 @@ use Psr\Container\ContainerInterface;
 
 return static function (Application $app, MiddlewareFactory $factory, ContainerInterface $container): void {
     $app->route('/v1/acesso', App\Handler\AcessoHandler::class, ['GET', 'POST', 'PATCH', 'DELETE']);
+    $app->route('/v1/categorias[/:idCategoria]', App\Handler\CategoriaHandler::class, ['GET', 'POST', 'PATCH', 'DELETE']);
+    $app->route('/v1/produtos[/:idProduto]', App\Handler\ProdutoHandler::class, ['GET', 'POST', 'PATCH', 'DELETE']);
 };
